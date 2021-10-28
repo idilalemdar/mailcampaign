@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Contact",
@@ -14,15 +15,30 @@ public class Contact {
     @Column
     private String name;
     @Column
-    private String email;
+    private String email_address;
 
-    public Contact(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
+    @OneToMany(mappedBy = "email")
+    Set<Message> messages;
 
     public Contact() {
 
+    }
+
+    public Contact(String name, String email_address) {
+        this.name = name;
+        this.email_address = email_address;
+    }
+
+    public Set<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(Set<Message> messages) {
+        this.messages = messages;
+    }
+
+    public void addMessage(Message message){
+        messages.add(message);
     }
 
     public String getName() {
@@ -33,12 +49,12 @@ public class Contact {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmail_address() {
+        return email_address;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail_address(String email_address) {
+        this.email_address = email_address;
     }
 
     public Long getId() {
