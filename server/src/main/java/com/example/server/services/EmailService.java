@@ -17,7 +17,7 @@ public class EmailService {
     }
 
     public Email getEmail(Long id){
-        return respository.findById(id).get();
+        return repository.findById(id).get();
     }
 
     public List<Email> getAllEmails(){

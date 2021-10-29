@@ -11,15 +11,16 @@ public class MessageService {
     @Autowired
     private MessageRepository repository;
 
-    public Message createMessage(Long email_id, Long contact_id){
-        MessageKey messageKey = new MessageKey(email_id, contact_id);
-        Message message = new Message(messageKey);
+    public Message getMessage(Long contact_id, Long email_id){
+        MessageKey key = new MessageKey(contact_id, email_id);
+        return repository.findById(key).get();
+    }
+
+    public Message createMessage(Message message){
         return repository.save(message);
     }
 
-    public Message updateClickTime(MessageKey id){
-        Message message = repository.findById(id).get();
-        message.setReceive_time(System.currentTimeMillis());
-        return repository.save(message);
+    public Message updateMessage(Message msg){
+        return repository.save(msg);
     }
 }
