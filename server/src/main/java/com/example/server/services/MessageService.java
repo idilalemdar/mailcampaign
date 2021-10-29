@@ -1,10 +1,10 @@
-package services;
+package com.example.server.services;
 
-import models.Message;
-import models.MessageKey;
+import com.example.server.models.Message;
+import com.example.server.models.MessageKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.MessageRepository;
+import com.example.server.repository.MessageRepository;
 
 @Service
 public class MessageService {

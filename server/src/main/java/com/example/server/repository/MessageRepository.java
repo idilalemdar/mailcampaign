@@ -1,7 +1,7 @@
-package repository;
+package com.example.server.repository;
 
-import models.Message;
-import models.MessageKey;
+import com.example.server.models.Message;
+import com.example.server.models.MessageKey;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

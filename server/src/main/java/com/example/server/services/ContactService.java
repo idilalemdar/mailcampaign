@@ -1,9 +1,9 @@
-package services;
+package com.example.server.services;
 
-import models.Contact;
+import com.example.server.models.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.ContactRepository;
+import com.example.server.repository.ContactRepository;
 
 import java.util.List;
 

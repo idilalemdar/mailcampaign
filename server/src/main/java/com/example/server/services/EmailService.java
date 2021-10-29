@@ -1,9 +1,9 @@
-package services;
+package com.example.server.services;
 
-import models.Email;
+import com.example.server.models.Email;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.EmailRepository;
+import com.example.server.repository.EmailRepository;
 
 import java.util.List;
 
@@ -17,10 +17,10 @@ public class EmailService {
     }
 
     public Email getEmail(Long id){
-        return repository.findById(id).get();
+        return respository.findById(id).get();
     }
 
-    public List<Email> getALlEmails(){
+    public List<Email> getAllEmails(){
         return (List<Email>) repository.findAll();
     }
 }

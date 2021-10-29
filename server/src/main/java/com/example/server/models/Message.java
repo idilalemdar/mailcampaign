@@ -1,7 +1,6 @@
-package models;
+package com.example.server.models;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 public class Message {
