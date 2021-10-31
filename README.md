@@ -17,14 +17,19 @@ The server side provides the following REST endpoints:
 2.1) ContactController: Provides create and retrieve operations for the contact information. Available operations are:
 
 2.1.1) GET /contact/{id} : Retrieves a single contact information by contact id.
+
 2.1.2) GET /contact : Retrieves all contact entries in the Contact table.
+
 2.1.3) POST /contact : Adds a single contact information into the table. The contact information will be represented as a JSON object in the request body. 
+
 2.1.4) POST /contact/batch : Adds a list of contacts into the table. Again, the Contact objects are found in the request body.
 
 2.2) EmailController:
 
 2.2.1) GET /email/{id} : Retrieves email by id.
+
 2.2.2) GET /email : Retrieves all emails.
+
 2.2.3) POST /email : Adds new email into the database. Email information is kept in the request body.
 
 2.3) MessageController:
