@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.server.repository.MessageRepository;
 
+import java.util.List;
+
 @Service
 public class MessageService {
     @Autowired
@@ -22,5 +24,9 @@ public class MessageService {
 
     public Message updateMessage(Message msg){
         return repository.save(msg);
+    }
+
+    public List<Message> getAllMessages() {
+        return (List<Message>) repository.findAll();
     }
 }

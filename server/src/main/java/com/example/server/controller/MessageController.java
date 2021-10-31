@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequestMapping("/message")
 @RestController
 public class MessageController {
@@ -35,6 +37,11 @@ public class MessageController {
     @PostMapping
     public ResponseEntity<Message> sendMessage(@RequestBody Message message){
         return ResponseEntity.ok().body(messageService.createMessage(message));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Message>> getAllMessages(){
+        return ResponseEntity.ok().body(messageService.getAllMessages());
     }
 
 }
